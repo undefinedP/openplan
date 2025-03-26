@@ -3,19 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
   },
   "dependencies": {
+    "@repo/ui": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@storybook/addon-essentials": "^8.6.9",
     "@storybook/addon-onboarding": "^8.6.9",
     "@storybook/blocks": "^8.6.9",
@@ -23,12 +23,17 @@
     "@storybook/react": "^8.6.9",
     "@storybook/react-vite": "^8.6.9",
     "@storybook/test": "^8.6.9",
+    "@vitejs/plugin-react": "^4.3.4",
     "@vitest/browser": "^3.0.9",
     "@vitest/coverage-v8": "^3.0.9",
+    "autoprefixer": "^10.4.21",
     "playwright": "^1.51.1",
+    "postcss": "^8.5.3",
     "storybook": "^8.6.9",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.8.2",
     "vite": "^6.2.3",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.9"
   }
 }
