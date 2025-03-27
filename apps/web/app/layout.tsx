@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="kr">
-      <body className={pretendard.variable}>{children}</body>
+      <body className={pretendard.className}>{children}</body>
     </html>
   );
 }
