@@ -1,20 +1,19 @@
 "use client";
 
-import { ReactNode } from "react";
-
-interface ButtonProps {
-  children: ReactNode;
+interface IButtonProps {
+  text: string;
   className?: string;
-  appName: string;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
-export const Button = ({ children, className, appName }: ButtonProps) => {
+export const Button = ({ text, className, onClick }: IButtonProps) => {
   return (
     <button
-      className={className}
-      onClick={() => alert(`Hello from your ${appName} app!`)}
+      className={`ui-w-[335px] ui-text-primary-foreground ui-p-3 ui-rounded-xl ui-bg-primary hover:ui-bg-primary hover:ui-opacity-80 ${className}`}
+      onClick={onClick}
     >
-      {children}
+      <span>{text}</span>
     </button>
   );
 };
