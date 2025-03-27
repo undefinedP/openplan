@@ -1,15 +1,10 @@
+@import "@repo/theme/theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: #fafafa;
-    --foreground: #111111;
-    --primary: #111111;
-    --primary-foreground: #ffffff;
-  }
-
   html,
   body {
     @apply min-h-screen bg-background text-foreground;
