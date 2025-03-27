@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@repo/ui/button";
-import Header from "../../components/header";
+import Header from "@/components/header";
 import { useRouter } from "next/navigation";
 
 export default function Home() {

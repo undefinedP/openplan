@@ -4,13 +4,12 @@ interface IButtonProps {
   text: string;
   className?: string;
   onClick?: () => void;
-  disabled?: boolean;
 }
 
-export const Button = ({ text, className, onClick }: IButtonProps) => {
+export const Button = ({ text, onClick }: IButtonProps) => {
   return (
     <button
-      className={`ui-w-[335px] ui-text-primary-foreground ui-p-3 ui-rounded-xl ui-bg-primary hover:ui-bg-primary hover:ui-opacity-80 ${className}`}
+      className={`ui-w-full ui-rounded-xl ui-bg-primary ui-p-3 ui-text-primary-foreground hover:ui-bg-primary hover:ui-opacity-80`}
       onClick={onClick}
     >
       <span>{text}</span>
