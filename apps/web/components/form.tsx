@@ -1,13 +1,28 @@
+import { isUrl } from "@/utils/validator";
+
 interface IFormProps {
   label: string;
-  value: string | number;
+  value: string;
 }
 
 export default function Form({ label, value }: IFormProps) {
   return (
     <div>
       <div>{label}</div>
-      <div className="opacity-50">{value}</div>
+      <div className="opacity-50">
+        {isUrl(value) ? (
+          <a
+            className="underline"
+            target="_blank"
+            rel="noreferrer"
+            href={value}
+          >
+            {value}
+          </a>
+        ) : (
+          value
+        )}
+      </div>
     </div>
   );
 }
