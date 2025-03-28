@@ -2,7 +2,10 @@
   "name": "openplan",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
+    "build:turbo": "turbo run build",
+    "build:ui": "pnpm --filter=@repo/ui build",
+    "build:storybook": "pnpm --filter=storybook build",
+    "build:all": "pnpm run build:ui && pnpm run build:storybook",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
