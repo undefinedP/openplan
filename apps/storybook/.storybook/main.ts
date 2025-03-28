@@ -30,10 +30,10 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       resolve: {
         alias: {
-          // 직접 dist/index.css 파일의 절대 경로로 지정
+          "@repo/ui": path.resolve(__dirname, "../../../packages/ui"),
           "@repo/ui/styles.css": path.resolve(
             __dirname,
-            "../../packages/ui/dist/index.css",
+            "../../../packages/ui/dist/index.css",
           ),
         },
       },
