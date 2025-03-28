@@ -9,8 +9,8 @@
     "dist"
   ],
   "exports": {
-    "./*": "./src/*",
-    "./styles.css": "./dist/index.css"
+    "./*": "./src/index.tsx",
+    "./styles.css": "./src/styles.css"
   },
   "scripts": {
     "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
