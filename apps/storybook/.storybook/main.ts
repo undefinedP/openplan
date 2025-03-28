@@ -28,9 +28,6 @@ const config: StorybookConfig = {
       resolve: {
         alias: {
           "@repo/ui": getAbsolutePath("../../../packages/ui"),
-          "@repo/ui/styles.css": getAbsolutePath(
-            "../../../packages/ui/dist/index.css",
-          ),
         },
       },
     });
