@@ -47,7 +47,7 @@ export default function PhotoContent() {
               height={photo.height}
             />
           </div>
-          <div className="flex flex-col items-center gap-3 px-5 lg:max-h-[388px] lg:min-w-[700px]">
+          <div className="flex w-full flex-col items-center gap-3 px-5 lg:max-h-[388px] lg:min-w-[700px]">
             <Card className="md:flex-row">
               <Form label="id" value={photo.id} />
               <Form label="author" value={photo.author} />

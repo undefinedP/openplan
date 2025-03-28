@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
-import path, { join, dirname } from "path";
+import { join, dirname } from "path";
 import { mergeConfig } from "vite";
 
 /**
@@ -11,10 +11,7 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, "package.json")));
 }
 const config: StorybookConfig = {
-  stories: [
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-  ],
+  stories: ["../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-onboarding"),
@@ -26,15 +23,11 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
-  viteFinal: async (config, { configType }) => {
-    return mergeConfig(config, {
+  viteFinal: async (viteConfig) => {
+    return mergeConfig(viteConfig, {
       resolve: {
         alias: {
-          // 직접 dist/index.css 파일의 절대 경로로 지정
-          "@repo/ui/styles.css": path.resolve(
-            __dirname,
-            "../../packages/ui/dist/index.css",
-          ),
+          "@repo/ui": getAbsolutePath("../../../packages/ui"),
         },
       },
     });
