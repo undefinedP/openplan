@@ -5,12 +5,10 @@
   "sideEffects": [
     "**/*.css"
   ],
-  "files": [
-    "dist"
-  ],
   "exports": {
-    "./*": "./src/index.tsx",
-    "./styles.css": "./src/styles.css"
+    ".": "./src/index.ts",
+    "./button": "./src/button.tsx",
+    "./styles.css": "./dist/index.css"
   },
   "scripts": {
     "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
