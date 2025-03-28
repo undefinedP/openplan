@@ -51,10 +51,14 @@ export default function Home() {
         </span>
       </main>
       <div className="flex justify-center px-5 py-10">
-        <Button text="다음" onClick={handleDebouncedClick} />
+        <Button
+          text="다음"
+          onClick={handleDebouncedClick}
+          className="md:h-12 md:w-1/2 lg:h-16 lg:w-[335px]"
+        />
       </div>
       {mutation.isPending && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/30">
           <LoadingSpinner />
         </div>
       )}

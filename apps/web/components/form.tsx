@@ -7,7 +7,7 @@ interface IFormProps {
 
 export default function Form({ label, value }: IFormProps) {
   return (
-    <div>
+    <div className="w-full">
       <div>{label}</div>
       <div className="opacity-50">
         {isUrl(value) ? (

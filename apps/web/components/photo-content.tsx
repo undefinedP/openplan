@@ -32,34 +32,40 @@ export default function PhotoContent() {
   return (
     <>
       <div
-        className="absolute inset-0 h-2/3 w-[1000px] bg-cover bg-center opacity-30 blur-lg filter"
+        className="absolute inset-0 h-2/3 w-full bg-cover bg-center opacity-30 blur-lg filter lg:h-full lg:scale-[3]"
         style={{ backgroundImage: `url('${photo.download_url}')` }}
       />
-      <div className="relative flex flex-col items-center gap-10 overflow-scroll pb-[3.75rem]">
+      <div className="flex flex-col gap-10">
         <Header className="text-primary-foreground" />
-        <div className="px-5">
-          <Image
-            className="rounded-3xl"
-            src={photo.download_url}
-            alt={photo.author}
-            width={photo.width}
-            height={photo.height}
-          />
-        </div>
-        <div className="flex w-screen flex-col items-center gap-3 px-5">
-          <Card>
-            <Form label="id" value={photo.id} />
-            <Form label="author" value={photo.author} />
-          </Card>
-          <Card>
-            <Form label="width" value={toLocaleNumber(photo.width)} />
-            <Form label="height" value={toLocaleNumber(photo.height)} />
-          </Card>
-          <Card>
-            <Form label="url" value={photo.url} />
-            <Form label="download_url" value={photo.download_url} />
-          </Card>
-          <Button text="이전" onClick={() => router.back()} />
+        <div className="relative flex h-screen flex-col items-center gap-10 pb-[3.75rem] lg:flex-row lg:justify-center">
+          <div className="px-5">
+            <Image
+              className="rounded-3xl"
+              src={photo.download_url}
+              alt={photo.author}
+              width={photo.width}
+              height={photo.height}
+            />
+          </div>
+          <div className="flex flex-col items-center gap-3 px-5 lg:max-h-[388px] lg:min-w-[700px]">
+            <Card className="md:flex-row">
+              <Form label="id" value={photo.id} />
+              <Form label="author" value={photo.author} />
+            </Card>
+            <Card className="md:flex-row">
+              <Form label="width" value={toLocaleNumber(photo.width)} />
+              <Form label="height" value={toLocaleNumber(photo.height)} />
+            </Card>
+            <Card>
+              <Form label="url" value={photo.url} />
+              <Form label="download_url" value={photo.download_url} />
+            </Card>
+            <Button
+              text="이전"
+              onClick={() => router.back()}
+              className="md:w-1/4"
+            />
+          </div>
         </div>
       </div>
     </>
